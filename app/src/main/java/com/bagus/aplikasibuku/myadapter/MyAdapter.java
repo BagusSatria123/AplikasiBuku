@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bagus.aplikasibuku.R;
+
 import com.bagus.aplikasibuku.mymodal.MyModal;
 
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        view = LayoutInflater.from(context).inflate(R.layout.adapter_user,viewGroup,false);
+        view = LayoutInflater.from(context).inflate(R.layout.adapter_users,viewGroup,false);
 
         return new MyAdapterKu(view);
 
