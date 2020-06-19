@@ -1,6 +1,7 @@
 package com.bagus.aplikasibuku;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,6 +27,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     RecyclerView recycler_view;
     DrawerLayout drawer;
+
 //    private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -100,6 +102,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_slideshow) {
             Toast.makeText(getApplicationContext(),"ANDA KLIK SLIDE SHOW",Toast.LENGTH_LONG).show();
             Snackbar.make(drawer,"ANDA KLIK SLIDE SHOW",Toast.LENGTH_LONG).show();
+        }else if (id == R.id.nav_tools) {
+            Intent intent = new Intent(MainActivity.this,MySetting.class);
+            startActivity(intent);
+        }else if (id == R.id.nav_share) {
+
+        }else if (id == R.id.nav_send) {
+
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
