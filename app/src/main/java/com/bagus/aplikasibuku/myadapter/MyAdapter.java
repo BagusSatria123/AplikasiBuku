@@ -43,7 +43,7 @@ public class MyAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        view = LayoutInflater.from(context).inflate(R.layout.adapter_users,viewGroup,false);
+        view = LayoutInflater.from(context).inflate(R.layout.adapter_user,viewGroup,false);
 
         return new MyAdapterKu(view);
 
