@@ -1,9 +1,11 @@
 package com.bagus.aplikasibuku;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -22,7 +24,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-RecyclerView recycler_view;
+    RecyclerView recycler_view;
+    DrawerLayout drawer;
 //    private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -39,7 +42,7 @@ RecyclerView recycler_view;
                         .setAction("Action", null).show();
             }
         });
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -83,16 +86,20 @@ RecyclerView recycler_view;
 //                || super.onSupportNavigateUp();
 //    }
 
+    @SuppressLint("WrongConstant")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-
+            Toast.makeText(getApplicationContext(),"ANDA KLIK HOME",Toast.LENGTH_LONG).show();
+            Snackbar.make(drawer,"ANDA KLIK HOME",Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_gallery) {
-
+            Toast.makeText(getApplicationContext(),"ANDA KLIK GALERI",Toast.LENGTH_LONG).show();
+            Snackbar.make(drawer,"ANDA KLIK GALERI",Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_slideshow) {
-
+            Toast.makeText(getApplicationContext(),"ANDA KLIK SLIDE SHOW",Toast.LENGTH_LONG).show();
+            Snackbar.make(drawer,"ANDA KLIK SLIDE SHOW",Toast.LENGTH_LONG).show();
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -12,4 +12,8 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="home_second">Home Second</string>
+
+    <string name="menu_Tools">Tools</string>
+    <string name="menu_Share">Share</string>
+    <string name="menu_Send">Send</string>
 </resources>
