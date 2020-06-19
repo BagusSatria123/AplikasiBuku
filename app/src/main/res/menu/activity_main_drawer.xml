@@ -19,7 +19,7 @@
 
         <item
             android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_action_tools"
             android:title="@string/menu_Tools" />
     </group>
 
@@ -27,11 +27,11 @@
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_slideshow"
+                android:icon="@drawable/ic_action_share"
                 android:title="@string/menu_Share" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_slideshow"
+                android:icon="@drawable/ic_action_send"
                 android:title="@string/menu_Send" />
         </menu>
     </item>
