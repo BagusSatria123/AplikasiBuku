@@ -23,16 +23,16 @@
             android:title="@string/menu_Tools" />
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_action_share"
-                android:title="@string/menu_Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_action_send"
-                android:title="@string/menu_Send" />
-        </menu>
-    </item>
+<!--    <item android:title="Communicate">-->
+<!--        <menu>-->
+<!--            <item-->
+<!--                android:id="@+id/nav_share"-->
+<!--                android:icon="@drawable/ic_action_share"-->
+<!--                android:title="@string/menu_Share" />-->
+<!--            <item-->
+<!--                android:id="@+id/nav_send"-->
+<!--                android:icon="@drawable/ic_action_send"-->
+<!--                android:title="@string/menu_Send" />-->
+<!--        </menu>-->
+<!--    </item>-->
 </menu>
