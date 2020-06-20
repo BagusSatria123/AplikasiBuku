@@ -14,6 +14,7 @@ import com.bagus.aplikasibuku.R;
 
 import com.bagus.aplikasibuku.mymodal.MyModal;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.ArrayList;
 
@@ -55,7 +56,6 @@ public class MyAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
 
         ((MyAdapterKu) viewHolder).textView.setText(myModals.get(i).getName());
-
         Picasso.get().load(myModals.get(i).getImage()).into((MyAdapterKu) viewHolder).image);
     }
 
