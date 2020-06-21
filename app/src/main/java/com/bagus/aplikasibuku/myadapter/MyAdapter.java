@@ -56,7 +56,7 @@ public class MyAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
 
         ((MyAdapterKu) viewHolder).textView.setText(myModals.get(i).getName());
-        Picasso.get().load(myModals.get(i).getImage()).into((MyAdapterKu) viewHolder).image);
+        Picasso.get().load(myModals.get(i).getImage()).into(((MyAdapterKu) viewHolder).image);
     }
 
     @Override
