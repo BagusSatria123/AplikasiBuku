@@ -3,11 +3,20 @@ package com.bagus.aplikasibuku;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import com.bagus.aplikasibuku.myadapter.MyAdapter;
+import com.bagus.aplikasibuku.mymodal.MyModal;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -22,11 +31,23 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     RecyclerView recycler_view;
     DrawerLayout drawer;
+
+    MyAdapter myAdapter;
+    GridLayoutManager gm;
+    ArrayList<MyModal> myModals;
+    RequestQueue queue;
+    String url = "https://api.banghasan.com/quran/format/json/surat";
+
 
 //    private AppBarConfiguration mAppBarConfiguration;
 
@@ -51,7 +72,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
+        queue = Volley.newRequestQueue(this);
+
         recycler_view = findViewById(R.id.recycler_view);
+        gm = new GridLayoutManager(this,2);
+        recycler_view.setLayoutManager(gm);
+        myModals = new ArrayList<>();
+        myAdapter = new MyAdapter(this,myModals);
+
+        tampilkanDataUser();
+    }
+
+    private void tampilkanDataUser(){
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.d("Berhasil", response + "");
+            }
+        }, new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("Errorku",error + "");
+            }
+        });
+
+        queue.add(jsonObjectRequest);
     }
 
     @Override
